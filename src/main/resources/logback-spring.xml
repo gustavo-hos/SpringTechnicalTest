@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<configuration>
+
+    <property name="LOG_FILE_P" value="./order_processing.log" />
+
+    <appender name="OrderProcessing" class="ch.qos.logback.core.FileAppender">
+        <file>${LOG_FILE_P}</file>
+        <append>true</append>
+        <encoder>
+            <pattern>%d{HH:mm:ss.SSS} [%thread] %-5level %logger{36} - %msg%n</pattern>
+        </encoder>
+    </appender>
+
+    <include resource="org/springframework/boot/logging/logback/base.xml"/>
+
+    <!-- Configure the root logger -->
+    <root level="info">
+        <appender-ref ref="CONSOLE" />
+    </root>
+
+    <logger name="order_processing" level="INFO">
+        <appender-ref ref="OrderProcessing" />
+    </logger>
+
+</configuration>

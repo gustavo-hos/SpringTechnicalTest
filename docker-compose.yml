@@ -1,0 +1,33 @@
+version: '3.8'
+services:
+  postgres:
+    image: docker.io/postgres
+    hostname: postgres
+    environment:
+      POSTGRES_DB: OrderManager
+      POSTGRES_USERNAME: postgres
+      POSTGRES_PASSWORD: 12341
+    ports:
+      - "127.0.0.1:5432:5432"
+    networks:
+      - simple-network
+
+  spring-app:
+    container_name: "OrderManagerApp"
+    build:
+      context: .
+      dockerfile: ./Dockerfile
+      args:
+        - dir=./build/libs/
+        - artifact=order_manager-1.0.jar
+    ports:
+      - "8080:8080"
+    depends_on:
+      - postgres
+    environment:
+      - DB_URL=jdbc:postgresql://postgres:5432/OrderManager
+    networks:
+      - simple-network
+
+networks:
+  simple-network:
