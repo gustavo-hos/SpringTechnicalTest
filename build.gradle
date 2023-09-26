@@ -12,6 +12,10 @@ java {
     sourceCompatibility = '1.8'
 }
 
+bootJar {
+    destinationDirectory = file('./app')
+}
+
 repositories {
     mavenCentral()
     maven { url 'https://repo.spring.io/milestone' }
