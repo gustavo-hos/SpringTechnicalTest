@@ -104,7 +104,7 @@ following JSON will be returned
 }
 ```
 
-how can you observe, the quantity that went to the stock is only 10, as the previous created order
+As can you observe, the quantity that went to the stock is only 10, as the previous created order
 was 10.
 
 Afterward, if we check the order completion endpoint, doing a GET request to /api/order/{id}/completion
