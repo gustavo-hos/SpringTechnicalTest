@@ -12,7 +12,7 @@ following technologies:
 
 Following these rules: 
 
-´´´
+´´´json
   You should develop an API where users can create and manage orders. Items can be ordered and orders are automatically fulfilled as soon as the item stock allows it.
 
 Specification
