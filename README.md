@@ -1,3 +1,7 @@
+## Important note about this branch
+
+The code in this branch has design pattern errors, architectural errors and is not syntax clear.
+
 ## About
 
 This is a simple order manager implementation that utilizes the 
