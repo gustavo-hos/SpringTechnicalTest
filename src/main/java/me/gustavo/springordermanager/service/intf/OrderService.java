@@ -15,4 +15,6 @@ public interface OrderService extends CRUDService<Order, UUID> {
     Optional<Order> update(OrderDto orderDto);
 
     List<Order> findPendingOrdersByItem(long itemId, Sort sort);
+
+    void supplyOrder(Order order);
 }
